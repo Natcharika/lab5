@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        let student = [
+            {
+            fullname: 'นายตั้งใจ เรียนมาก',
+            age: 18,
+            year: 1,
+            gpa: 3.40,
+            help: true
+            },
+            {
+            fullname: 'นายส่งงาน ตลอดมา',
+            age: 19,
+            year: 2,
+            gpa: 3.00,
+            help: false
+            },
+            {
+            fullname: 'นางสาวใส่ใจ ดีงาม',
+            age: 20,
+            year: 3,
+            gpa: 2.90,
+            help: true
+            },
+            {
+            fullname: 'นางสาวเนเน่ เด็กอ้วน',
+            age: 20,
+            year: 2,
+            gpa: 3.00,
+            help: true
+            },
+            {
+            fullname: 'นายดรอน อ้วน',
+            age: 21,
+            year: 3,
+            gpa: 2.35,
+            help: false
+            },
+            {
+            fullname: 'นายภูมิ อ้วนอ้วน',
+            age: 21,
+            year: 3,
+            gpa: 3.21,
+            help: false
+            },
+            {
+            fullname: 'นางสาวยูยู อ้วนอ้วน',
+            age: 19,
+            year: 1,
+            gpa: 3.00,
+            help: false
+            }
+    ]
+
+let year1 = [];
+let year2 = [];
+let year3 = [];
+    
+for(let i=0; i<student.length;i++){
+    let DOB = 2565 - student[i].age;
+    if(student[i].gpa >= 3.20 && student[i].help == true ){
+        console.log(student[i].fullname +' เกิดเมื่อปี '+ DOB +' ได้รับทุนการศึกษา'+' เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังช่วยงานภาควิชาด้วย')
+        if(student[i].year == 1){
+            year1.push(student[i].fullname+ ' เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังช่วยงานภาควิชาด้วย' )
+        }
+        else if(student[i].year == 2){
+            year2.push(student[i].fullname+ ' เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังช่วยงานภาควิชาด้วย' )
+        }
+        else if(student[i].year == 3){
+            year3.push(student[i].fullname+ ' เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังช่วยงานภาควิชาด้วย' )
+        }
+    }
+    else if(student[i].gpa >= 3.20 && student[i].help == false ){
+        console.log(student[i].fullname +' เกิดเมื่อปี '+ DOB +' ได้รับทุนการศึกษา'+' เนื่องจากเกรดเฉลี่ยถึงเกณฑ์')
+        if(student[i].year == 1){
+            year1.push(student[i].fullname+ ' เนื่องจากเกรดเฉลี่ยถึงเกณฑ์' )
+        }
+        else if(student[i].year == 2){
+            year2.push(student[i].fullname+ ' เนื่องจากเกรดเฉลี่ยถึงเกณฑ์' )
+        }
+        else if(student[i].year == 3){
+            year3.push(student[i].fullname+ ' เนื่องจากเกรดเฉลี่ยถึงเกณฑ์' )
+        }
+    }    
+    else if(student[i].year >= 2 && student[i].gpa >= 2.75 && student[i].help == true){
+        console.log(student[i].fullname +' เกิดเมื่อปี '+ DOB +' ได้รับทุนการศึกษา'+' เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังช่วยงานภาควิชาด้วย')
+        if(student[i].year == 2){
+            year2.push(student[i].fullname+ ' เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังช่วยงานภาควิชาด้วย' )
+        }
+        else if(student[i].year == 3){
+            year3.push(student[i].fullname+ ' เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังช่วยงานภาควิชาด้วย' )
+        }
+    }
+    else if(student[i].year >= 2 && student[i].gpa < 2.75 && student[i].help == false){
+        console.log(student[i].fullname +' เกิดเมื่อปี '+ DOB +' ไม่ได้ทุนการศึกษา'+' เนื่องจากเกรดเฉลี่ยไม่ถึงเกณฑ์ และยังไม่ได้ช่วยงานภาควิชา')
+        
+        }
+    else if(student[i].year >= 2 && student[i].gpa < 2.75 && student[i].help == true){
+        console.log(student[i].fullname +' เกิดเมื่อปี '+ DOB +' ไม่ได้ทุนการศึกษา'+' เนื่องจากเกรดเฉลี่ยไม่ถึงเกณฑ์')
+        
+        }
+    else if(student[i].year >= 2 && student[i].gpa >= 2.75 && student[i].help == false){
+        console.log(student[i].fullname +' เกิดเมื่อปี '+ DOB +' ไม่ได้ทุนการศึกษา'+' เนื่องจากยังไม่ได้ช่วยงานภาควิชา')
+        
+        }        
+    }    
+/*----------------------------------------------------------------------------------------------------------------------------------*/
+    console.log("ชั้นปีที่ 1");
+    if(year1.length > 0){
+        for( i in year1){
+            console.log(year1[i]);
+        }
+    }
+    else{
+        console.log("ไม่มี");
+    }
+    console.log("ชั้นปีที่ 2");
+    if(year2.length > 0){
+        for( i in year2){
+            console.log(year2[i]);
+        }
+    }
+    else{
+        console.log("ไม่มี");
+    }
+    console.log("ชั้นปีที่ 3");
+    if(year3.length > 0){
+        for( i in year3){
+            console.log(year3[i]);
+        }
+    }
+    else{
+        console.log("ไม่มี");
+    }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
